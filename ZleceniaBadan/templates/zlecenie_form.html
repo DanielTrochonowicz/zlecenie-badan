@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% load bootstrap %}
+
+{% block title %} Zapisz zlecenie {% endblock %}
+
+{% block body %}
+
+<div class="card text-center">
+  <div class="card-header">Zapisz zlecenie</div>
+  <div class="card-body">
+    <form role="role" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | bootstrap}}
+        <a class="btn btn-outline-primary" href="{% url 'zlecenia_badan' %}">Cofnij</a>
+        <button type="submit" class="btn btn-outline-success">Dodaj <i class="fas fa-sign-in-alt"></i></button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

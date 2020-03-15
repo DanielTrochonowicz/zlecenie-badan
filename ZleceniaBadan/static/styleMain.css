@@ -1,0 +1,62 @@
+body
+{
+     color: black;
+     padding: 50px;
+     font-size: 24px;
+     text-align: center;
+}
+
+.card
+{
+    padding: auto, auto;
+    width: 400px;
+}
+
+.text-center
+{
+    margin: auto;
+    margin-top: auto;
+}
+
+.card-header
+{
+     font-size: 30px;
+     color: black;
+}
+
+#center
+{
+    margin: auto auto;
+}
+
+.lista
+{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 60px;
+}
+
+#nav1
+{
+    text-align: right;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin:0px;
+    padding:0;
+}
+
+#pad1{
+    margin-top: 25px;
+}
+
+.dodajzlecenie
+{
+    font-size: 30px;
+}
+.alert-danger1
+{
+    width:400px;
+    text-align: center;
+    font-weight: 600;
+}
