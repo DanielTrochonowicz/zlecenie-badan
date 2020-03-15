@@ -13,3 +13,4 @@ class ZleceniaBadan(admin.ModelAdmin):
     search_fields = ('wynik', 'opis')
 
 admin.site.register(DodatkoweBadania)
+
