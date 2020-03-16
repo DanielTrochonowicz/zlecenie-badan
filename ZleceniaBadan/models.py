@@ -71,7 +71,7 @@ class ZleceniaBadan(models.Model):
     opis = models.TextField(blank=True)
     wynik = models.TextField(blank=True)
     placówka = models.ForeignKey(Placowka, on_delete=models.CASCADE, null=True)
-    cena = models.DecimalField(max_digits=99999, decimal_places=2)
+    cena = models.DecimalField(max_digits=999, decimal_places=2)
     data_wystawienia = models.DateField(null=True, blank=True)
 
     class Meta:
