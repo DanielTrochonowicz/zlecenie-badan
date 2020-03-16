@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import ZleceniaBadan, DodatkoweBadania,WynikiBadań, Nazwisko , Imię, Termin, Placowka
+from .models import ZleceniaBadan, DodatkoweBadania, WynikiBadań, Nazwisko, Imię, Termin, Placowka
 
 
 @admin.register(ZleceniaBadan)

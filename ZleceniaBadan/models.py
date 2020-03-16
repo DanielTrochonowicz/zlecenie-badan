@@ -72,7 +72,7 @@ class ZleceniaBadan(models.Model):
     wynik = models.TextField(blank=True, null=True)
     placówka = models.ForeignKey(Placowka, on_delete=models.CASCADE, null=True, blank=True)
     cena = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
-    data_wystawienia = models.DateField(null=True, blank=True)
+    data_wystawienia = models.DateField(blank=True)
 
     class Meta:
         verbose_name = "Zlecenie Badania"
