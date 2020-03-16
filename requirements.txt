@@ -1,5 +1,4 @@
 -r requirements-dev.txt
-dj-database-url
 gunicorn
 psycopg2
 django-heroku
