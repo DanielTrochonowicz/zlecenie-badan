@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import ZleceniaBadan, DodatkoweBadania
+from .models import ZleceniaBadan, DodatkoweBadania,WynikiBadań, Nazwisko , Imię, Termin, Placowka
 
 
 @admin.register(ZleceniaBadan)
@@ -13,4 +13,9 @@ class ZleceniaBadan(admin.ModelAdmin):
     search_fields = ('wynik', 'opis')
 
 admin.site.register(DodatkoweBadania)
+admin.site.register(WynikiBadań)
+admin.site.register(Nazwisko)
+admin.site.register(Imię)
+admin.site.register(Termin)
+admin.site.register(Placowka)
 
