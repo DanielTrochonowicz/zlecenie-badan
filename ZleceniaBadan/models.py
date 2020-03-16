@@ -68,7 +68,7 @@ class ZleceniaBadan(models.Model):
     badanie = models.CharField(max_length=128, blank=True, null=True)
     dodatkowe_badania = models.ForeignKey(DodatkoweBadania, on_delete=models.CASCADE, null=True, blank=True)
     termin = models.ForeignKey(Termin, on_delete=models.CASCADE, null=True, blank=True)
-    opis = models.TextField(blank=True, null=True)
+    opis = models.TextField(default='', blank=True, null=True)
     wynik = models.TextField(blank=True, null=True)
     placówka = models.ForeignKey(Placowka, on_delete=models.CASCADE, null=True, blank=True)
     cena = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
