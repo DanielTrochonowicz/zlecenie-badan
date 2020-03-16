@@ -9,7 +9,7 @@
                 Witaj {{ request.user.username }}<br>
                 <a id="pad1" class="btn btn-outline-primary" href="{% url 'logout' %}">Logout ?</a>
             {% else %}
-                 Witaj!
+                 Witaj!<br>
                 <a id="pad1" class="btn btn-outline-primary" href="{% url 'login' %}">Login?</a>
             {% endif %}
   </h1>
