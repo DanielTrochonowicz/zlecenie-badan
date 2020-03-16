@@ -5,7 +5,7 @@ from django.db import models
 class Placowka(models.Model):
     def __str__(self):
         return self.nazwa
-    nazwa = models.CharField(max_length=100)
+    nazwa = models.CharField(max_length=128)
     opis = models.TextField(blank=True)
 
     class Meta:
@@ -15,7 +15,7 @@ class Placowka(models.Model):
 class Termin(models.Model):
     def __str__(self):
         return self.realizacja
-    realizacja = models.CharField(max_length=100)
+    realizacja = models.CharField(max_length=128)
 
     class Meta:
         verbose_name = "Termin"
@@ -24,7 +24,7 @@ class Termin(models.Model):
 class DodatkoweBadania(models.Model):
     def __str__(self):
         return self.edycja
-    edycja = models.CharField(max_length=100)
+    edycja = models.CharField(max_length=128)
 
     class Meta:
         verbose_name = "Dodatkowe Badanie"
@@ -33,7 +33,7 @@ class DodatkoweBadania(models.Model):
 class Imię(models.Model):
     def __str__(self):
         return self.imię
-    imię = models.CharField(max_length=100)
+    imię = models.CharField(max_length=128)
 
     class Meta:
         verbose_name = "Imię"
@@ -42,7 +42,7 @@ class Imię(models.Model):
 class Nazwisko(models.Model):
     def __str__(self):
         return self.nazwisko
-    nazwisko = models.CharField(max_length=100)
+    nazwisko = models.CharField(max_length=128)
 
     class Meta:
         verbose_name = "Nazwisko"
@@ -51,7 +51,7 @@ class Nazwisko(models.Model):
 class WynikiBadań(models.Model):
     def __str__(self):
         return self.wynik
-    wynik = models.CharField(max_length=100)
+    wynik = models.CharField(max_length=128)
 
     class Meta:
         verbose_name = "Wynik"
@@ -63,16 +63,16 @@ class ZleceniaBadan(models.Model):
     def __str__(self):
         return self.badanie
 
-    imię = models.ForeignKey(Imię, on_delete=models.CASCADE, null=True, blank=True)
-    nazwisko = models.ForeignKey(Nazwisko, on_delete=models.CASCADE, null=True, blank=True)
-    badanie = models.CharField(max_length=100)
-    dodatkowe_badania = models.ForeignKey(DodatkoweBadania, on_delete=models.CASCADE, null=True, blank=True)
-    termin = models.ForeignKey(Termin, on_delete=models.CASCADE, null=True, blank=True)
+    imię = models.ForeignKey(Imię, on_delete=models.CASCADE, blank=True)
+    nazwisko = models.ForeignKey(Nazwisko, on_delete=models.CASCADE, blank=True)
+    badanie = models.CharField(max_length=128)
+    dodatkowe_badania = models.ForeignKey(DodatkoweBadania, on_delete=models.CASCADE, blank=True)
+    termin = models.ForeignKey(Termin, on_delete=models.CASCADE, blank=True)
     opis = models.TextField(blank=True)
     wynik = models.TextField(blank=True)
-    placówka = models.ForeignKey(Placowka, on_delete=models.CASCADE, null=True)
+    placówka = models.ForeignKey(Placowka, on_delete=models.CASCADE)
     cena = models.DecimalField(max_digits=6, decimal_places=2)
-    data_wystawienia = models.DateField(null=True, blank=True)
+    data_wystawienia = models.DateField(blank=True)
 
     class Meta:
         verbose_name = "Zlecenie Badania"
